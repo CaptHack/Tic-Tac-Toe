@@ -13,6 +13,7 @@ print(p1, 'will mark X')
 p2=input("Enter the name of player 2 :")
 print(p2, 'will mark 0')
 check='X'
+#playing it for nine squared if space available
 for i in range(9):
     while True:
         choice=input('Enter :')
@@ -23,6 +24,7 @@ for i in range(9):
                 break
             else:
                 continue
+#making changes in the board accordingly
         
     if choice in board.keys():
         if board[choice]==' ':
@@ -32,15 +34,16 @@ for i in range(9):
                 check='0'
             else:
                 check='X'
+#checking for win                
             if board['a1']==board['a2']==board['a3']=='X' or board['b1']==board['b2']==board['b3']=='X'or board['c1']==board['c2']==board['c3']=='X' or board['a1']==board['b2']==board['c3']=='X' or board['a3']==board['b2']==board['c1']=='X' or board['a1']==board['b1']==board['c1']=='X' or board['a2']==board['b2']==board['c2']=='X':
                 pBoard(board)
                 print(p1, 'won the game')
-                end=input("Press 'Enter' to quit")
+                end=input("Enter any key to quit")
                 sys.exit()
             if board['a1']==board['a2']==board['a3']=='0' or board['b1']==board['b2']==board['b3']=='0'or board['c1']==board['c2']==board['c3']=='0' or board['a1']==board['b2']==board['c3']=='0' or board['a3']==board['b2']==board['c1']=='0' or board['a1']==board['b1']==board['c1']=='0' or board['a2']==board['b2']==board['c2']=='0':
                 pBoard(board)
                 print(p2, ' won the game')
-                end=input("Press'Enter' to quit")
+                end=input("Enter any key to quit")
 
                 sys.exit()
     pBoard(board)
